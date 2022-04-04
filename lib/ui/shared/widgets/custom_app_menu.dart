@@ -30,7 +30,7 @@ class CustomAppMenu extends StatelessWidget {
           CustomFlatButton(
             title: 'Otra página',
             color: Colors.black,
-            onPressed: () => Get.toNamed('/otra/Carlos'),
+            onPressed: () => Get.toNamed('/otra/Carlos/Espejel/21'),
           ),
         ],
       ),

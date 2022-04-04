@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           transition: Transition.noTransition,
         ),
         GetPage(
-          name: '/otra/:name',
+          name: '/otra/:name/:lastName/:age',
           page: () => const OtraView(),
           transition: Transition.noTransition,
         ),

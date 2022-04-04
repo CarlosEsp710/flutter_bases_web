@@ -8,10 +8,12 @@ class OtraView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final name = Get.parameters['name'];
+    final lastName = Get.parameters['lastName'];
+    final age = Get.parameters['age'];
 
     return Scaffold(
       body: Center(
-        child: Text('Hola $name'),
+        child: Text('Hola $name $lastName, tienes $age años'),
       ),
     );
   }
