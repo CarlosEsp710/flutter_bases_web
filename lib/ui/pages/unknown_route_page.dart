@@ -16,12 +16,12 @@ class UnknownRoutePage extends StatelessWidget {
           children: [
             Text(
               '404',
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline4,
             ),
             const SizedBox(height: 20),
             Text(
               'Page not found',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline6,
             ),
             const SizedBox(height: 20),
             CustomFlatButton(

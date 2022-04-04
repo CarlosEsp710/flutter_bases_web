@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:get/get.dart';
+
 import '../shared/widgets/custom_flat_button.dart';
 
 class CounterView extends StatefulWidget {
@@ -10,7 +12,7 @@ class CounterView extends StatefulWidget {
 }
 
 class _CounterViewState extends State<CounterView> {
-  int _counter = 0;
+  int _counter = int.parse(Get.parameters['counter']!);
 
   @override
   Widget build(BuildContext context) {
