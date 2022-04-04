@@ -18,7 +18,7 @@ class CustomAppMenu extends StatelessWidget {
           CustomFlatButton(
             title: 'Contador Stateful',
             color: Colors.black,
-            onPressed: () => Get.toNamed('/stateful?counter=10'),
+            onPressed: () => Get.toNamed('/stateful'),
           ),
           const SizedBox(width: 10),
           CustomFlatButton(

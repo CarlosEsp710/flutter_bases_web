@@ -12,7 +12,16 @@ class CounterView extends StatefulWidget {
 }
 
 class _CounterViewState extends State<CounterView> {
-  int _counter = int.parse(Get.parameters['counter']!);
+  int _counter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    if (Get.parameters.containsKey('counter')) {
+      _counter = int.parse(Get.parameters['counter']!);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
