@@ -1,10 +1,11 @@
+import 'package:bases_web/ui/layout/main_layout_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../ui/pages/counter_page.dart';
-import '../ui/pages/getx_page.dart';
-import '../ui/pages/otra_page.dart';
+import '../ui/views/counter_view.dart';
+import '../ui/views/getx_view.dart';
+import '../ui/views/otra_view.dart';
 import '../ui/pages/unknown_route_page.dart';
 
 void main() => runApp(const MyApp());
@@ -18,25 +19,28 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Bases Web',
       initialRoute: '/stateful',
+      builder: (_, child) => MainLayoutPage(
+        child: child ?? const CircularProgressIndicator(),
+      ),
       unknownRoute: GetPage(
-        name: '/not_found',
+        name: '/404',
         page: () => const UnknownRoutePage(),
-        transition: Transition.fadeIn,
+        transition: Transition.noTransition,
       ),
       getPages: [
         GetPage(
           name: '/stateful',
-          page: () => const CounterPage(),
+          page: () => const CounterView(),
           transition: Transition.noTransition,
         ),
         GetPage(
           name: '/getx',
-          page: () => const GetxPage(),
+          page: () => const GetxView(),
           transition: Transition.noTransition,
         ),
         GetPage(
           name: '/otra',
-          page: () => const OtraPage(),
+          page: () => const OtraView(),
           transition: Transition.noTransition,
         ),
       ],
