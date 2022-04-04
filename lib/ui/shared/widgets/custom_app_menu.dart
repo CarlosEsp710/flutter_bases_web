@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:get/get.dart';
+
 import 'custom_flat_button.dart';
 
 class CustomAppMenu extends StatelessWidget {
@@ -16,19 +18,19 @@ class CustomAppMenu extends StatelessWidget {
           CustomFlatButton(
             title: 'Contador Stateful',
             color: Colors.black,
-            onPressed: () {},
+            onPressed: () => Get.toNamed('/stateful'),
           ),
           const SizedBox(width: 10),
           CustomFlatButton(
             title: 'Contador GetX',
             color: Colors.black,
-            onPressed: () {},
+            onPressed: () => Get.toNamed('/getx'),
           ),
           const SizedBox(width: 10),
           CustomFlatButton(
             title: 'Otra página',
             color: Colors.black,
-            onPressed: () {},
+            onPressed: () => Get.toNamed('/otra'),
           ),
         ],
       ),

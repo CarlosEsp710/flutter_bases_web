@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
+import 'package:get/get.dart';
+
+import '../../controllers/counter_controller.dart';
 import '../shared/widgets/custom_app_menu.dart';
 import '../shared/widgets/custom_flat_button.dart';
 
-class CounterPage extends StatefulWidget {
-  const CounterPage({Key? key}) : super(key: key);
-
-  @override
-  State<CounterPage> createState() => _CounterPageState();
-}
-
-class _CounterPageState extends State<CounterPage> {
-  int _counter = 0;
+class GetxPage extends StatelessWidget {
+  const GetxPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final CounterController _controller = Get.put(CounterController());
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -22,7 +20,7 @@ class _CounterPageState extends State<CounterPage> {
           const CustomAppMenu(),
           const Spacer(),
           const Text(
-            'Stateful Counter',
+            'GetX Counter',
             style: TextStyle(fontSize: 30),
           ),
           const SizedBox(height: 20),
@@ -31,9 +29,11 @@ class _CounterPageState extends State<CounterPage> {
           ),
           FittedBox(
             fit: BoxFit.contain,
-            child: Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            child: Obx(
+              () => Text(
+                '${_controller.counter.value}',
+                style: Theme.of(context).textTheme.headline4,
+              ),
             ),
           ),
           Row(
@@ -41,11 +41,11 @@ class _CounterPageState extends State<CounterPage> {
             children: <Widget>[
               CustomFlatButton(
                 title: 'Decrement',
-                onPressed: () => setState(() => _counter--),
+                onPressed: () => _controller.decrement(),
               ),
               CustomFlatButton(
                 title: 'Increment',
-                onPressed: () => setState(() => _counter++),
+                onPressed: () => _controller.increment(),
               ),
             ],
           ),
