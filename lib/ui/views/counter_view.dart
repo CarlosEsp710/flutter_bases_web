@@ -14,38 +14,39 @@ class _CounterViewState extends State<CounterView> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        const Text(
-          'Stateful Counter',
-          style: TextStyle(fontSize: 30),
-        ),
-        const SizedBox(height: 20),
-        const Text(
-          'You have pushed the button this many times:',
-        ),
-        FittedBox(
-          fit: BoxFit.contain,
-          child: Text(
-            '$_counter',
-            style: Theme.of(context).textTheme.headline4,
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          const Text(
+            'Stateful Counter',
+            style: TextStyle(fontSize: 30),
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            CustomFlatButton(
-              title: 'Decrement',
-              onPressed: () => setState(() => _counter--),
+          const SizedBox(height: 20),
+          const Text(
+            'You have pushed the button this many times:',
+          ),
+          FittedBox(
+            fit: BoxFit.contain,
+            child: Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
             ),
-            CustomFlatButton(
-              title: 'Increment',
-              onPressed: () => setState(() => _counter++),
-            ),
-          ],
-        ),
-      ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              CustomFlatButton(
+                title: 'Decrement',
+                onPressed: () => setState(() => _counter--),
+              ),
+              CustomFlatButton(
+                title: 'Increment',
+                onPressed: () => setState(() => _counter++),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

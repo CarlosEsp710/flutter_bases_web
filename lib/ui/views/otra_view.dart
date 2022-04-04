@@ -5,11 +5,10 @@ class OtraView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
-        Text('Otra página'),
-      ],
+    return const Scaffold(
+      body: Center(
+        child: Text('Otra página'),
+      ),
     );
   }
 }

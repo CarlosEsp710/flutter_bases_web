@@ -15,6 +15,7 @@ class MainLayoutPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const CustomAppMenu(),
             const Spacer(),

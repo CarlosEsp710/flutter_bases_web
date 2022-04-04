@@ -15,7 +15,12 @@ class UnknownRoutePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Unknown route',
+              '404',
+              style: Theme.of(context).textTheme.headline1,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Page not found',
               style: Theme.of(context).textTheme.headline4,
             ),
             const SizedBox(height: 20),
